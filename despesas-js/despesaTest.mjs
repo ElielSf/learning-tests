@@ -3,7 +3,7 @@ import Despesas from "./despesa.mjs";
 function verificaResultado(esperado, obtido, mensagem) {
   if (typeof esperado != typeof obtido) {
     console.log(
-      `❌  Falhou, tipo de dados esperado: ${typeof esperado} \ntipo de dados obtido: ${typeof obtido}`
+      `❌  Falhou, tipo de dados esperado: ${typeof esperado} | tipo de dados obtido: ${typeof obtido}`
     );
     return;
   }
