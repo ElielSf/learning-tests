@@ -2,6 +2,18 @@ const { sum, subtraction, multiplication, division, potentiation, squareRoot, re
 
 test("Testando a soma", () => {
   expect(sum(5, 5)).toBe(10);
+  expect(sum(5, -6)).toBe(-1);
+  expect(sum(-0.5, 0.6)).toBeCloseTo(0.1);
+  expect(sum(0.5, 0.6)).toBeCloseTo(1.1);
+  expect(sum(0, 4)).toBe(4);
+
+  expect(() => sum(null, 1)).toThrow("Entrada inválida.");
+  expect(() => sum(1, null)).toThrow("Entrada inválida.");
+  expect(() => sum(null, null)).toThrow("Entrada inválida.");
+
+  expect(() => sum(2, undefined)).toThrow("Entrada inválida.");
+  expect(() => sum(undefined, 2)).toThrow("Entrada inválida.");
+  expect(() => sum(undefined, undefined)).toThrow("Entrada inválida.");
 });
 
 test("Testando a subtração", () => {
