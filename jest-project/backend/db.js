@@ -1,6 +1,6 @@
-const mysql = require('mysql2/promises');
+import { createPool } from 'mysql2/promise';
 
-const connection = mysql.createPool({
+const connection = createPool({
     host: 'localhost',
     user: 'root',
     password: 'password',
@@ -9,7 +9,7 @@ const connection = mysql.createPool({
 
 async function getUserById(id) {
     const [row] = await connection.query('SELECT * FROM  users WHERE id = ?', [id]);
-    return rows[0];
+    return row[0];
 }
 
-module.exports = { getUserById, connection };
+export { getUserById, connection };
